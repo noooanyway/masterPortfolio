@@ -1,10 +1,8 @@
-import React from "react";
-import "./Greeting.css";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
 import { Fade } from "react-reveal";
+import SocialMedia from "../../components/socialMedia/SocialMedia";
+import { greeting } from "../../portfolio";
 import FeelingProud from "./FeelingProud";
+import "./Greeting.css";
 
 export default function Greeting(props) {
   const theme = props.theme;
@@ -29,15 +27,7 @@ export default function Greeting(props) {
                 {greeting.subTitle}
               </p>
               <SocialMedia theme={theme} />
-              <div className="portfolio-repo-btn-div">
-                <Button
-                  text="⭐ Star Me On Github"
-                  newTab={true}
-                  href={greeting.portfolio_repository}
-                  theme={theme}
-                  className="portfolio-repo-btn"
-                />
-              </div>
+
               {/* <div className="button-greeting-div">
               <Button text="Contact me" href="#contact" />
               <Button text="See my resume" newTab={true} href={greeting.resumeLink} />

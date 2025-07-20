@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import TopButton from "../../components/topButton/TopButton";
-import Educations from "../../containers/education/Educations";
-import Certifications from "../../containers/certifications/Certifications";
-import CompetitiveSites from "../../components/competitiveSites/CompetitiveSites";
-import EducationImg from "./EducationImg";
-import { competitiveSites } from "../../portfolio";
-import { certifications } from "../../portfolio";
-import "./EducationComponent.css";
+import { Component } from "react";
 import { Fade } from "react-reveal";
+import CompetitiveSites from "../../components/competitiveSites/CompetitiveSites";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import TopButton from "../../components/topButton/TopButton";
+import Certifications from "../../containers/certifications/Certifications";
+import Educations from "../../containers/education/Educations";
+import { certifications, competitiveSites } from "../../portfolio";
+import "./EducationComponent.css";
+import EducationImg from "./EducationImg";
 
 class Education extends Component {
   render() {
@@ -32,7 +31,7 @@ class Education extends Component {
                   Education
                 </h1>
                 <h3 className="heading-sub-text" style={{ color: theme.text }}>
-                  Basic Qualification and Certifcations
+                  Qualifications and Certifcations
                 </h3>
                 <CompetitiveSites logos={competitiveSites.competitiveSites} />
               </div>

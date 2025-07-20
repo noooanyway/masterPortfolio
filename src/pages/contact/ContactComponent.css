@@ -17,9 +17,16 @@
 
 .address-heading-div {
   display: flex;
+  flex-direction: row; /* imagem e texto lado a lado */
+  align-items: center; /* alinha verticalmente */
+  justify-content: space-between;
   margin-top: 80px;
+  gap: 2rem; /* espaço entre imagem e texto */
 }
-
+/* Garante que a imagem não estica */
+.address-heading-img-div {
+  flex: 0 0 auto; /* ocupa só o espaço que precisa */
+}
 .blog-heading-div > * {
   flex: 1;
 }
@@ -52,7 +59,10 @@
 }
 
 .address-heading-text-div {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* mantêm o texto em cima */
+  align-items: center; /* centra tudo no eixo horizontal */
 }
 
 .contact-heading-img-div > * {
@@ -120,11 +130,12 @@
   justify-content: center;
 }
 
+/* Faz com que o botão esteja sempre centrado no .address-heading-text-div */
 .address-btn-div {
   width: 100%;
   display: flex;
-  justify-content: center;
-  margin-top: 0;
+  justify-content: center; /* centra o botão */
+  margin-top: 1rem; /* distância do texto */
 }
 
 @media (max-width: 1380px) {

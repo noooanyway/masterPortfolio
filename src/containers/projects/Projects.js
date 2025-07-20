@@ -1,85 +1,60 @@
-import React, { useState, useEffect } from "react";
-import ApolloClient from "apollo-boost";
-import { gql } from "apollo-boost";
-import "./Project.css";
-import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
+// src/pages/projects/Projects.js
+import { Component } from "react";
 import Button from "../../components/button/Button";
-import { openSource } from "../../portfolio";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import TopButton from "../../components/topButton/TopButton";
 import { greeting } from "../../portfolio.js";
+import ProjectsData from "../../shared/opensource/projects.json";
+import "./Projects.css";
 
-export default function Projects() {
-  const [repo, setrepo] = useState([]);
+class Projects extends Component {
+  render() {
+    const theme = this.props.theme;
+    const projects = ProjectsData.data;
 
-  useEffect(() => {
-    getRepoData();
-  }, []);
+    return (
+      <div className="projects-main">
+        <Header theme={theme} />
 
-  function getRepoData() {
-    const client = new ApolloClient({
-      uri: "https://api.github.com/graphql",
-      request: (operation) => {
-        operation.setContext({
-          headers: {
-            authorization: `Bearer ${atob(openSource.githubConvertedToken)}`,
-          },
-        });
-      },
-    });
+        {/* Header da página */}
+        <div className="basic-projects">
+          <h1 style={{ color: theme.text }}>
+            {projects.length > 0 ? "My Projects" : "No Projects Found"}
+          </h1>
+        </div>
 
-    client
-      .query({
-        query: gql`
-          {
-            repositoryOwner(login: "${openSource.githubUserName}") {
-              ... on User {
-                pinnedRepositories(first: 6) {
-                  edges {
-                    node {
-                      nameWithOwner
-                      description
-                      forkCount
-                      stargazers {
-                        totalCount
-                      }
-                      url
-                      id
-                      diskUsage
-                      primaryLanguage {
-                        name
-                        color
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `,
-      })
-      .then((result) => {
-        setrepoFunction(result.data.repositoryOwner.pinnedRepositories.edges);
-        console.log(result);
-      });
-  }
+        {/* Lista de links */}
+        <ul className="projects-links-list" style={{ color: theme.text }}>
+          {projects.map((proj) => (
+            <li key={proj.id} style={{ margin: "0.5rem 0" }}>
+              <a
+                href={proj.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: theme.primary, textDecoration: "underline" }}
+              >
+                {proj.name}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-  function setrepoFunction(array) {
-    setrepo(array);
-  }
+        {/* Botão para ver mais no GitHub */}
+        <div style={{ textAlign: "center", margin: "2rem 0" }}>
+          <Button
+            text="More Projects"
+            href={greeting.githubProfile}
+            newTab={true}
+            theme={theme}
+          />
+        </div>
 
-  return (
-    <div className="main" id="opensource">
-      <h1 className="project-title">Open Source Projects</h1>
-      <div className="repo-cards-div-main">
-        {repo.map((v, i) => {
-          return <GithubRepoCard repo={v} key={v.node.id} />;
-        })}
+        <Footer theme={theme} onToggle={this.props.onToggle} />
+        <TopButton theme={theme} />
       </div>
-      <Button
-        text={"More Projects"}
-        className="project-button"
-        href={greeting.githubProfile}
-        newTab={true}
-      />
-    </div>
-  );
+    );
+  }
 }
+
+export default Projects;

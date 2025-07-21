@@ -138,6 +138,44 @@
   margin-top: 1rem; /* distância do texto */
 }
 
+.resume-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.resume-option {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+}
+
+/* botão nativo “See My Resume” */
+.see-resume-button {
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.see-resume-button:hover {
+  background: currentColor;
+  color: white;
+}
+
+/* quando as opções aparecem */
+.resume-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* ajusta o teu Button para ficarem lado a lado */
+.resume-options .project-button {
+  padding: 0.5rem 1rem;
+}
+
 @media (max-width: 1380px) {
   .contact-heading-text {
     font-size: 50px;

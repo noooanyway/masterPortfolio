@@ -24,28 +24,30 @@ const greeting = {
   title: "Orest Martyn",
   logo_name: "Orest Martyn",
   nickname: "Add nickname",
-  subTitle: "Dem right, i like that nerd  ass shit",
+  subTitle: "I build things. I break them. I fix them better.",
   resumeLink: "",
   portfolio_repository: "",
-  githubProfile: "",
+  githubProfile: "noooanyway",
+  resumeLinkPT: "./assets/CV-PT.pdf",
+  resumeLinkEN: "assets/CV-EN.pdf",
 };
 
 const socialMediaLinks = [
   {
     name: "Github",
-    link: "https://github.com/",
+    link: "https://github.com/noooanyway",
     fontAwesomeIcon: "fa-github", // Reference https://fontawesome.com/icons/github?style=brands
     backgroundColor: "#181717", // Reference https://simpleicons.org/?q=github
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/",
+    link: "https://www.linkedin.com/in/orest-martyn/",
     fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
     backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
   },
   {
     name: "Gmail",
-    link: "mailto:",
+    link: "mailto:orestmartyn00@gmail.com",
     fontAwesomeIcon: "fa-google", // Reference https://fontawesome.com/icons/google?style=brands
     backgroundColor: "#D14836", // Reference https://simpleicons.org/?q=gmail
   },
@@ -111,11 +113,6 @@ const skills = {
         {
           skillName: "Jupyter",
           fontAwesomeClassname: "simple-icons:jupyter",
-          style: { backgroundColor: "transparent" },
-        },
-        {
-          skillName: "MATLAB",
-          fontAwesomeClassname: "simple-icons:mathworks",
           style: { backgroundColor: "transparent" },
         },
       ],
@@ -285,7 +282,7 @@ const experience = {
           title: "Installation Technician",
           company: "Stratio",
           company_url: "https://stratio.com",
-          logo_path: "placeholder.png",
+          logo_path: "stratiologo.png",
           duration: "July 2023 - Sep 2023",
           location: "Lisbon Metropolitan Area, Portugal",
           description:
@@ -296,7 +293,7 @@ const experience = {
           title: "Full-Stack PHP Developer",
           company: "Vidor",
           company_url: "",
-          logo_path: "placeholder.png",
+          logo_path: "logovidor.svg",
           duration: "Oct 2024 - Dec 2024",
           location: "Coimbra, Portugal",
           description:
@@ -313,7 +310,7 @@ const experience = {
             "Orchestration and Resource optimization for rEIiabIe and lOw-Iatency services (OREOS)",
           company: "University of Coimbra",
           company_url: "https://www.uc.pt",
-          logo_path: "placeholder.png",
+          logo_path: "uclogo.png",
           duration: "2022 - 2023",
           location: "Coimbra, Portugal",
           description:
@@ -324,7 +321,7 @@ const experience = {
           title: "Forecasting market trends using Neural Networks (RNN-LSTM)",
           company: "University of Coimbra",
           company_url: "https://www.uc.pt",
-          logo_path: "placeholder.png",
+          logo_path: "uclogo.png",
           duration: "2023 - 2024",
           location: "Coimbra, Portugal",
           description:
@@ -340,7 +337,7 @@ const experience = {
           title: "President",
           company: "República dos Fantasmas",
           company_url: "",
-          logo_path: "placeholder.png",
+          logo_path: "fantasmaslogo.png",
           duration: "2020 - 2024",
           location: "Coimbra, Portugal",
           description:
@@ -411,9 +408,8 @@ export const techStack = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "animated_ashutosh.png",
-    description:
-      "I am available on almost every social media. You can message me, I will reply within 24 hours. I can help you with ML, AI, React, Android, Cloud and Opensource Development.",
+    profile_image_path: "",
+    description: "Contact me trough my socials, I'll be happy to reply!",
   },
 
   addressSection: {

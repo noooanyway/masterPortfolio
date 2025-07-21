@@ -1,23 +1,26 @@
+// src/containers/cloudInfra/CloudInfraImg.jsx
 import { Component } from "react";
-import try1 from "../../assets/images/try1.png"; // ajusta o caminho se necessário
+// note o ReactComponent e a extensão .svg
+import { ReactComponent as CloudSvg } from "../../assets/images/bugfix.svg";
 
 export default class CloudInfraImg extends Component {
   render() {
-    // podes continuar a receber o theme se precisares de aplicar estilos condicionais
     const theme = this.props.theme;
     return (
-      <img
-        src={try1}
-        alt="Cloud Infrastructure Illustration"
-        style={{
-          width: "100%", // ajusta conforme desejado
-          height: "auto",
-          display: "block",
-          margin: "0 auto",
-          // se quiseres usar alguma cor do tema como borda, podes fazer:
-          // border: `2px solid ${theme.imageHighlight}`
-        }}
-      />
+      <div style={{ width: "100%", textAlign: "center" }}>
+        <CloudSvg
+          // define largura máxima e deixa a altura automática
+          style={{
+            width: "100%",
+            maxWidth: "500px", // ajuste ao tamanho desejado
+            height: "auto",
+            // faz o SVG herdar a cor definida
+            color: theme.text,
+          }}
+          // Se dentro do SVG você usar fill="currentColor",
+          // ele vai pintar todas as paths com theme.text
+        />
+      </div>
     );
   }
 }

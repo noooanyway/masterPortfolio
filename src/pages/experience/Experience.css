@@ -86,3 +86,35 @@
     text-align: center;
   }
 }
+/* === My Websites === */
+/* Experience.css */
+
+.websites-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.websites-heading {
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+.websites-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.websites-list li.website-item {
+  margin: 8px;
+  border: 1px solid; /* herda cor via inline style ou define aqui */
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.websites-list li.website-item a {
+  text-decoration: none;
+  font-weight: 500;
+}

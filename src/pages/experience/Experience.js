@@ -48,6 +48,40 @@ class Experience extends Component {
 
         <ExperienceAccordion sections={experience.sections} theme={theme} />
 
+        {/* My Websites Section */}
+        <div className="websites-section">
+          <Fade bottom duration={2000} distance="40px">
+            <h2 className="websites-heading" style={{ color: theme.text }}>
+              My Websites
+            </h2>
+            <ul className="websites-list">
+              <li className="website-item">
+                <a
+                  href="https://tiratulhos.pt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: theme.secondaryText }}
+                >
+                  tiratulhos.pt
+                </a>
+              </li>
+              <li
+                className="website-item"
+                style={{ border: `1px solid ${theme.text}` }}
+              >
+                <a
+                  href="http://www.jaservicos24h.pt/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: theme.secondaryText }}
+                >
+                  jaservicos24h.pt
+                </a>
+              </li>{" "}
+            </ul>
+          </Fade>
+        </div>
+
         {/* My Stack Section */}
         <TechStack theme={theme} data={techStack} />
 
